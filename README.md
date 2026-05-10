@@ -9,7 +9,7 @@ This is the official PyTorch implementation of the paper:
 >University of Science and Technology of China (USTC)<br>
 >CVPR 2025
 
-![pipeline](assets/pipeline.png)
+![pipeline](assets/intro.png)
 
 
 ## :wrench: Dependencies and Installation
