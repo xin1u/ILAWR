@@ -31,7 +31,6 @@ ILAWR/
     ├── ckpt/                          # Pre-trained checkpoints
     ├── datasets/                      # Dataset loading
     │   ├── weather_data.py            # All weather dataset classes
-    │   └── memory_buffer.py           # Exemplar memory buffer
     ├── loss/                          # Loss functions
     │   ├── perceptual.py              # VGG-19 contrastive perceptual loss
     │   └── distillation.py            # DAM & reconstruction distillation losses
