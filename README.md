@@ -1,6 +1,7 @@
 # ILAWR: Incremental Learning Adverse Weather Removal
 
 <a href='https://openaccess.thecvf.com/content/CVPR2025/papers/Lu_Continuous_Adverse_Weather_Removal_via_Degradation-Aware_Distillation_CVPR_2025_paper.pdf'><img src='https://img.shields.io/badge/Paper-CVPR2025-b31b1b.svg'></a> &nbsp;&nbsp;
+<a href='https://github.com/xin1u/ILAWR'><img src='https://img.shields.io/badge/Code-GitHub-181717.svg'></a> &nbsp;&nbsp;
 
 This is the official PyTorch implementation of the paper:
 
