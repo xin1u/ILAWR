@@ -13,13 +13,6 @@ from utils.scheduler import cosine_decay_lr
 
 
 class DAMDTrainer:
-    """DAMD incremental training loop (Algorithm 1).
-
-    Maintains a student network f, a DAM module M, and frozen copies
-    of both from prior sessions to serve as teachers. At session(t),
-    teacher guidance is computed on the *current* batch — no old data
-    is stored or replayed.
-    """
     def __init__(self, net, dam, criterion, train_loaders, test_loaders,
                  device, logger, args):
         self.net = net
@@ -133,11 +126,7 @@ class DAMDTrainer:
             }, best_path)
 
     def _compute_loss(self, x, y, session_id):
-        """Compute total loss on current-session data (Algorithm 1).
 
-        For session(t) with t > 0, teacher models from sessions 1..t-1
-        process the SAME input x to produce guidance — no replay buffer needed.
-        """
         loss_t1 = torch.zeros(1, device=self.device)
         loss_t2 = torch.zeros(1, device=self.device)
 
@@ -166,8 +155,7 @@ class DAMDTrainer:
         return total, loss_base, loss_t1, loss_t2
 
     def _get_teacher_dam_outputs(self, x):
-        """Collect DAM outputs from all frozen teacher models."""
-        outputs = []
+
         with torch.no_grad():
             for t_net, t_dam in zip(self.net_teachers, self.dam_teachers):
                 _, f = t_net(x, return_feats=True)
@@ -175,8 +163,7 @@ class DAMDTrainer:
         return outputs
 
     def _get_teacher_restore_outputs(self, x):
-        """Collect restoration outputs from all frozen teacher models."""
-        outputs = []
+
         with torch.no_grad():
             for t_net in self.net_teachers:
                 outputs.append(t_net(x))
@@ -202,7 +189,6 @@ class DAMDTrainer:
         return np.mean(all_ssim), np.mean(all_psnr)
 
     def after_session(self, session_id):
-        """Post-session: freeze current model as teacher for future sessions."""
         task_name = self.args.task_order[session_id]
         ckpt_dir = os.path.join(self.args.save_dir, self.args.exp_name, task_name)
         best_ckpt = torch.load(
