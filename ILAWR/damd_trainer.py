@@ -41,7 +41,6 @@ class DAMDTrainer:
                 yield batch
 
     def run_session(self, session_id):
-        """Train one incremental session."""
         self.net.unfreeze()
         self.dam.unfreeze()
         optimizer = optim.Adam(
@@ -130,7 +129,7 @@ class DAMDTrainer:
         loss_t1 = torch.zeros(1, device=self.device)
         loss_t2 = torch.zeros(1, device=self.device)
 
-        # Eq.1-3: base restoration loss on current data
+
         out, feats = self.net(x, return_feats=True)
         dam_out = self.dam(feats)
 
@@ -141,15 +140,15 @@ class DAMDTrainer:
         total = loss_base
 
         if session_id > 0:
-            # Eq.11,19: Teacher Group 1 — DAM distillation on current x
+
             guide1 = self.igam(dam_out, self._get_teacher_dam_outputs(x))
             loss_t1 = self.kl_loss(dam_out, guide1)
 
-            # Eq.13,19: Teacher Group 2 — restoration distillation on current x
+
             guide2 = self.igam(out, self._get_teacher_restore_outputs(x))
             loss_t2 = self.recon_distill_loss(out, guide2, x)
 
-            # Eq.20: total training loss
+
             total = total + self.args.lam * loss_t1 + self.args.zeta * loss_t2
 
         return total, loss_base, loss_t1, loss_t2
