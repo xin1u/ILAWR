@@ -259,18 +259,18 @@ SYNTHETIC_TASKS = {
     'haze': lambda p, s, a: HazeDataset(
         os.path.join(p, 'haze/RESIDE/SOTS/outdoor'), crop_size=s, ext='.png', augment=a),
     'rain': lambda p, s, a: RainDataset(
-        os.path.join(p, 'rain/train/Rain100H'), crop_size=s, augment=a),
+        os.path.join(p, 'rain/Rain100H/train'), crop_size=s, augment=a),
     'snow': lambda p, s, a: SnowDataset(
         os.path.join(p, 'snow/Snow100K/Snow100K-trainset/Snow100K-M'), crop_size=s, augment=a),
     'raindrop': lambda p, s, a: RaindropDataset(
-        os.path.join(p, 'rain/raindrop_data/train_a/train_a'), crop_size=s, augment=a),
+        os.path.join(p, 'rain/raindrop_data/train_a'), crop_size=s, augment=a),
 }
 
 REALWORLD_TASKS = {
     'Real_haze': lambda p, s, a: REVIDEDataset(
         os.path.join(p, 'haze/REVIDE_inside/train'), crop_size=s, ext='.JPG', augment=a),
     'Real_rain': lambda p, s, a: SPADataset(
-        os.path.join(p, 'rain/SPA+/training/real_train_1000'), crop_size=s, augment=a),
+        os.path.join(p, 'rain/SPA+/training/real_train'), crop_size=s, augment=a),
     'Real_snow': lambda p, s, a: SnowDataset(
         os.path.join(p, 'snow/RealSnow/training'), crop_size=s, augment=a),
     'Real_lol': lambda p, s, a: LowLightDataset(
