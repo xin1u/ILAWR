@@ -45,8 +45,7 @@ ILAWR/
     │   └── helpers.py                 # Directory & checkpoint utilities
     ├── damd_trainer.py                # DAMD training engine (Algorithm 1)
     ├── train_ilawr.py                 # Training entry point
-    ├── test_ilawr.py                  # Inference & evaluation script
-    └── train.sh                       # Example training commands
+    └── test_ilawr.py                  # Inference & evaluation script
 ```
 
 
