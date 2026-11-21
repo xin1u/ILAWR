@@ -122,7 +122,7 @@ python train_ilawr.py \
 ```
 
 
-## :file_folder: Data,result and ckpt
+## :file_folder: Data, result and ckpt
 
 We use the following datasets for training and evaluation:
 
@@ -135,7 +135,7 @@ We use the following datasets for training and evaluation:
 | Low-Light | — | [LOL-v2](https://github.com/flyywh/CVPR-2020-Semi-Low-Light) |
 
 | result and ckpt | [result and ckpt](https://huggingface.co/datasets/xi1i1i/weather/tree/main) |
-
+|-------------|------------------|
 
 
 ## :book: Citation
