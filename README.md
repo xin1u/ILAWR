@@ -122,17 +122,20 @@ python train_ilawr.py \
 ```
 
 
-## :file_folder: Datasets
+## :file_folder: Data,result and ckpt
 
 We use the following datasets for training and evaluation:
 
 | Degradation | Synthetic Dataset | Real-World Dataset |
 |-------------|------------------|--------------------|
 | Haze | [RESIDE](https://sites.google.com/view/raboron/datasets/reside) (SOTS outdoor) | [REVIDE](https://github.com/BookerDeWitt/REVIDE) |
-| Rain | [Rain100H](https://www.icst.pku.edu.cn/struct/Projects/joint_rain_removal.html) | [SPA+](https://github.com/stevewongv/SPANet) |
-| Snow | [Snow100K](https://sites.google.com/view/yunfuliu/desnownet) | [RealSnow](https://sites.google.com/view/yunfuliu/desnownet) |
+| Rain | [Rain100H](https://www.icst.pku.edu.cn/struct/Projects/joint_rain_removal.html) | [SPA+](https://huggingface.co/datasets/xi1i1i/weather/tree/main) |
+| Snow | [Snow100K](https://sites.google.com/view/yunfuliu/desnownet) | [RealSnow](https://huggingface.co/datasets/xi1i1i/weather/tree/main) |
 | Raindrop | [Raindrop](https://github.com/rui1996/DeRaindrop) | — |
 | Low-Light | — | [LOL-v2](https://github.com/flyywh/CVPR-2020-Semi-Low-Light) |
+
+| result and ckpt | [result and ckpt](https://huggingface.co/datasets/xi1i1i/weather/tree/main) |
+
 
 
 ## :book: Citation
