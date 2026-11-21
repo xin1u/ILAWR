@@ -257,7 +257,7 @@ class PairedDataset(data.Dataset):
 
 SYNTHETIC_TASKS = {
     'haze': lambda p, s, a: HazeDataset(
-        os.path.join(p, 'haze/RESIDE/SOTS/outdoor'), crop_size=s, ext='.png', augment=a),
+        os.path.join(p, 'haze/RESIDE/OTS_ALPHA'), crop_size=s, ext='.png', augment=a),
     'rain': lambda p, s, a: RainDataset(
         os.path.join(p, 'rain/Rain100H/train'), crop_size=s, augment=a),
     'snow': lambda p, s, a: SnowDataset(
